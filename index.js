@@ -24,3 +24,5 @@ app.get('/api/hello', async(req, res) => {
         greeting: `Hello, ${visitorName}! Thre temperature is ${temp} degrres Celsius in ${location}.`
     })
 })
+
+module.exports = app;
