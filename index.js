@@ -15,7 +15,7 @@ app.listen(PORT, ()=> {
 
 app.get('/api/hello', async(req, res) => {
     const visitorName = req.query.visitor_name || 'Mark';
-    const client_ip = req.socket.remoteAddress;
+    const client_ip = req.ip
     const location = 'New York'
     const temp = 11;
     res.json({
