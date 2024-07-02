@@ -14,7 +14,7 @@ app.get('/api/hello', async(req, res) => {
         clientIP = '8.8.8.8';
     }
     
-    const response = await fetch (`https://ipapi.co/${client_ip}/json/`);
+    const response = await fetch (`https://ipapi.co/${clientIP}/json/`);
     const data = await response.json();
     const {city, region_name, country_name, latitude, longitude } = data;
     const temperature = 11
