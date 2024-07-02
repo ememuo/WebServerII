@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const axios = require("axios")
 const bodyparser = require('body-parser')
 
 app.use(express.json()); app.use(express.urlencoded({ extended: true }));
@@ -14,9 +15,13 @@ app.get('/api/hello', async(req, res) => {
     const visitorName = req.query.visitor_name || 'Mark';
     const client_ip = req.ip;
 
-    const response = await fetch (`https://ipapi.co/${client_ip}/json/`);
-    const data = await response.json();
-    const {city, region_name, country_name, latitude, longitude } = data;
+    const api_url = `https://ipapi.co/${client_ip}/json/`;
+
+    fetch(api_url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
     const temperature = 11
     
     res.json({
