@@ -21,7 +21,7 @@ app.get('/api/hello', async(req, res) => {
     res.json({
         client_ip : clientIP,
         location: `${city}`,
-        greeting: `Hello, ${visitorName}! The temperature is ${temperature} degrres Celsius in ${city}.`
+        greeting: `Hello, ${visitorName}! The temperature is ${temperature} degrees Celsius in ${city}.`
     })
 })
 
